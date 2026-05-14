@@ -1,0 +1,505 @@
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
+
+   @font-face {
+    font-family: "FWC Black";
+    src: url("assets/FWC2026-NormalBlack.2bd896c8.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "FWC Condensed";
+    src: url("assets/FWC2026-UltraCondensedMedium.ttf") format("truetype");
+  }
+  
+  /* ==========================================================================
+     RESET & BASE STYLES
+     ========================================================================== */
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  :root {
+    --black: #050505;
+    --dark: #101010;
+    --white: #ffffff;
+    --gray: #bdbdbd;
+    --red: #e10600;
+    --green: #00c853;
+  }
+  
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+  }
+  
+  img {
+    width: 100%;
+    display: block;
+  }
+  
+  /* ==========================================================================
+     TYPOGRAPHY (Sjednocení h3 se stylem sekcí)
+     ========================================================================== */
+  
+  h3 {
+    font-family: "FWC Condensed", sans-serif;
+    font-size: 3.5rem;
+    line-height: 0.9;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  
+  /* ==========================================================================
+     HERO SECTION
+     ========================================================================== */
+  
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.92)),
+      url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1600&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    padding: 2rem 1.5rem;
+  }
+  
+  /* Hero Motion Graphics */
+  .hero-motion {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .hero-motion span {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(225, 6, 0, 0.15);
+    filter: blur(10px);
+    animation: float 12s infinite linear;
+  }
+  
+  .hero-motion span:nth-child(1) { width: 350px; height: 350px; top: 10%; left: -10%; }
+  .hero-motion span:nth-child(2) { width: 220px; height: 220px; top: 60%; left: 15%; animation-duration: 15s; }
+  .hero-motion span:nth-child(3) { width: 400px; height: 400px; top: 20%; right: -10%; animation-duration: 18s; }
+  .hero-motion span:nth-child(4) { width: 180px; height: 180px; bottom: 5%; right: 20%; animation-duration: 13s; }
+  
+  @keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-40px) rotate(180deg); }
+    100% { transform: translateY(0px) rotate(360deg); }
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7rem;
+  }
+  
+  /* Úprava pro tvoje 75x75 logo */
+.logo {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Zajistí, že se logo nezdeformuje */
+}
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--red);
+  }
+  
+  /* Hero Content */
+  .hero-content {
+    position: relative;
+    z-index: 5;
+    max-width: 1200px;
+  }
+  
+  .hero h1 {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.85;
+    margin-bottom: 2rem;
+    animation: fadeUp 1s ease;
+  }
+  
+  .title-line {
+    font-size: 9rem;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    letter-spacing: -4px;
+    white-space: nowrap;
+  }
+  
+  .title-year {
+    margin-top: 0.6rem;
+    font-size: 8.5rem;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    letter-spacing: -4px;
+  }
+  
+  .hero-text {
+    color: var(--gray);
+    line-height: 1.9;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+  }
+  
+  /* ==========================================================================
+     BUTTONS
+     ========================================================================== */
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: white;
+    transition: 0.35s ease;
+  }
+  
+  .hero-btn {
+    background: linear-gradient(135deg, #ff1a1a, #b80000);
+    padding: 1.5rem 3rem;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(225, 6, 0, 0.35);
+  }
+  
+  .hero-btn span {
+    font-size: 1.4rem;
+    transition: 0.3s;
+  }
+  
+  .hero-btn:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(225, 6, 0, 0.5);
+  }
+  
+  .hero-btn:hover span {
+    transform: translateX(6px);
+  }
+  
+  /* ==========================================================================
+     SECTIONS GENERAL
+     ========================================================================== */
+  
+  section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .section-title {
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+  
+  .section-title p {
+    color: var(--white);
+    font-size: 7rem;
+    line-height: 0.9;
+    letter-spacing: 1px;
+    font-family: "FWC Condensed", sans-serif;
+  }
+  
+  /* ==========================================================================
+     STATS
+     ========================================================================== */
+  
+  .stats {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .stat-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    text-align: center;
+    transition: 0.3s;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--red);
+  }
+  
+  .stat-card h2 {
+    font-size: 4rem;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+    font-family: "FWC Condensed", sans-serif;
+  }
+  
+  .stat-card p {
+    color: var(--gray);
+    font-size: 1.05rem;
+  }
+  
+  /* ==========================================================================
+     HOST COUNTRIES
+     ========================================================================== */
+  
+  .countries-grid {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .country-card {
+    position: relative;
+    min-height: 420px;
+    border-radius: 28px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: 0.4s;
+  }
+  
+  .country-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2));
+  }
+  
+  .country-content {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 2;
+  }
+  
+  .country-content h3 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  
+  .country-content p {
+    color: #ddd;
+    line-height: 1.4;
+    max-width: 260px;
+  }
+  
+  /* Country Images */
+  .usa { background-image: url("https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=1200&auto=format&fit=crop"); }
+  .canada { background-image: url("https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=1200&auto=format&fit=crop"); }
+  .mexico { background-image: url("https://images.unsplash.com/photo-1512813195386-6cf811ad3542?q=80&w=1200&auto=format&fit=crop"); }
+  
+  /* ==========================================================================
+     TICKETS
+     ========================================================================== */
+  
+  .tickets-grid {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .ticket-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 3rem 2rem;
+    border-radius: 28px;
+    transition: 0.3s;
+  }
+  
+  .ticket-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--red);
+  }
+  
+  .ticket-card h3 {
+    font-size: clamp(2.5rem, 4vw, 3.2rem);
+  }
+  
+  .ticket-card p {
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  
+  .price {
+    color: var(--red);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* ==========================================================================
+     STADIUMS GALLERY
+     ========================================================================== */
+  
+  .gallery-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .gallery-item {
+    min-height: 350px;
+    border-radius: 28px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.4s;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.02);
+  }
+  
+  .item-1 { background-image: url("https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1200&auto=format&fit=crop"); }
+  .item-2 { background-image: url("https://images.unsplash.com/photo-1577223625816-7546f13df25d?q=80&w=1200&auto=format&fit=crop"); }
+  .item-3 { background-image: url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1200&auto=format&fit=crop"); }
+  .item-4 { background-image: url("https://images.unsplash.com/photo-1518604666860-9ed391f76460?q=80&w=1200&auto=format&fit=crop"); }
+  
+  /* ==========================================================================
+     CONTACTS
+     ========================================================================== */
+  
+  .contact-wrapper {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .contact-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 3rem 2rem;
+    border-radius: 28px;
+  }
+  
+  .contact-card h3 {
+    font-size: clamp(2.5rem, 4vw, 3.2rem);
+  }
+  
+  .contact-card p {
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    background: #0d0d0d;
+    border: 1px solid #222;
+    color: white;
+    padding: 1rem;
+    border-radius: 14px;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .contact-form textarea {
+    resize: none;
+    min-height: 140px;
+  }
+  
+  .contact-form button {
+    border: none;
+    background: var(--red);
+    padding: 1rem 2rem;
+    border-radius: 14px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  /* ==========================================================================
+     FOOTER
+     ========================================================================== */
+  
+  footer {
+    padding: 2rem 1.5rem;
+    border-top: 1px solid #151515;
+    text-align: center;
+    color: #777;
+  }
+  
+  /* ==========================================================================
+     ANIMATIONS
+     ========================================================================== */
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ==========================================================================
+     RESPONSIVE DESIGN
+     ========================================================================== */
+  
+  /* Tablet */
+  @media (min-width: 768px) {
+    .stats { grid-template-columns: repeat(3, 1fr); }
+    .countries-grid { grid-template-columns: repeat(3, 1fr); }
+    .tickets-grid { grid-template-columns: repeat(3, 1fr); }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-wrapper { grid-template-columns: 1fr 1fr; }
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 2rem; }
+    .nav-links { justify-content: center; gap: 1rem; }
+    .title-line { font-size: 4.5rem; white-space: normal; letter-spacing: -2px; }
+    .title-year { font-size: 4.2rem; letter-spacing: -2px; }
+    .hero-btn { width: 100%; }
+    .section-title p { font-size: 3rem; }
+  }
+  
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .hero { padding: 2rem 5rem; }
+    section { padding-left: 5rem; padding-right: 5rem; }
+    footer { padding-left: 5rem; padding-right: 5rem; }
+  }
