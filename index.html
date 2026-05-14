@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>World Cup 2026</title>
 
+  <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header class="hero">
+  <!-- HERO -->
+
+  <header class="hero" id="home">
+
+    <!-- motion graphics -->
+    <div class="hero-motion">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- NAVBAR -->
 
     <nav class="navbar">
-      <div class="logo">WC26</div>
+
+      <div class="logo">
+        <img src="assets/logo.png" alt="World Cup 2026 Logo">
+      </div>
 
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Teams</a></li>
-        <li><a href="#">Stadiums</a></li>
-        <li><a href="#">Gallery</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#countries">Host Countries</a></li>
+        <li><a href="#tickets">Tickets</a></li>
+        <li><a href="#stadiums">Stadiums</a></li>
+        <li><a href="#contacts">Contacts</a></li>
       </ul>
+
     </nav>
+
+    <!-- HERO CONTENT -->
 
     <div class="hero-content">
 
-      <p class="subtitle">FIFA WORLD CUP</p>
-
       <h1>
-        WORLD CUP <br>
-        2026
+        <span class="title-line">FIFA WORLD CUP</span>
+        <span class="title-year">2026</span>
       </h1>
 
       <p class="hero-text">
         The biggest football tournament in the world returns in 2026.
-        Experience legendary stadiums, unforgettable matches and the passion of millions of fans.
+        Experience legendary stadiums, unforgettable matches and the passion
+        of millions of fans across North America.
       </p>
 
-      <a href="#" class="btn">Explore Tournament</a>
+      <a href="#countries" class="btn hero-btn">
+        Explore Tournament
+        <span>→</span>
+      </a>
 
     </div>
 
   </header>
 
   <main>
+
+    <!-- STATS -->
 
     <section class="stats">
 
@@ -69,51 +96,130 @@
 
     </section>
 
-    <section class="countries">
+    <!-- HOST COUNTRIES -->
+
+    <section class="countries" id="countries">
 
       <div class="section-title">
-        <p>HOST COUNTRIES</p>
-        <h2>Three Nations. One Tournament.</h2>
+        <p>Host Countries</p>
       </div>
 
       <div class="countries-grid">
 
         <article class="country-card usa">
+
           <div class="overlay"></div>
 
           <div class="country-content">
             <h3>USA</h3>
-            <p>Massive stadiums and iconic football atmosphere.</p>
+
+            <p>
+              Massive stadiums, iconic cities and unforgettable football atmosphere.
+            </p>
           </div>
+
         </article>
 
         <article class="country-card canada">
+
           <div class="overlay"></div>
 
           <div class="country-content">
-            <h3>CANADA</h3>
-            <p>Modern cities and unforgettable fan experience.</p>
+            <h3>Canada</h3>
+
+            <p>
+              Modern venues and incredible fan experiences across the country.
+            </p>
           </div>
+
         </article>
 
         <article class="country-card mexico">
+
           <div class="overlay"></div>
 
           <div class="country-content">
-            <h3>MEXICO</h3>
-            <p>Historic football culture and legendary supporters.</p>
+            <h3>Mexico</h3>
+
+            <p>
+              Historic football culture with passionate supporters and legendary energy.
+            </p>
           </div>
+
         </article>
 
       </div>
 
     </section>
 
-    <section class="gallery">
+    <!-- TICKETS -->
+
+    <section class="tickets" id="tickets">
 
       <div class="section-title">
-        <p>STADIUMS</p>
-        <h2>World Class Venues</h2>
+        <p>Tickets</p>
+      </div>
+
+      <div class="tickets-grid">
+
+        <article class="ticket-card">
+
+          <h3>Standard</h3>
+
+          <p>
+            Access to group stage matches with official seating and fan zones.
+          </p>
+
+          <div class="price">$99</div>
+
+          <a href="#" class="btn hero-btn">
+            Buy Tickets
+          </a>
+
+        </article>
+
+        <article class="ticket-card">
+
+          <h3>Premium</h3>
+
+          <p>
+            Premium seating, exclusive areas and unforgettable stadium experience.
+          </p>
+
+          <div class="price">$249</div>
+
+          <a href="#" class="btn hero-btn">
+            Buy Tickets
+          </a>
+
+        </article>
+
+        <article class="ticket-card">
+
+          <h3>VIP</h3>
+
+          <p>
+            Luxury hospitality, best seats and full World Cup premium access.
+          </p>
+
+          <div class="price">$599</div>
+
+          <a href="#" class="btn hero-btn">
+            Buy Tickets
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- STADIUMS -->
+
+    <section class="gallery" id="stadiums">
+
+      <div class="section-title">
+        <p>Stadiums</p>
       </div>
 
       <div class="gallery-grid">
@@ -127,44 +233,43 @@
 
     </section>
 
-    <section class="news">
+    <!-- CONTACTS -->
+
+    <section class="contacts" id="contacts">
 
       <div class="section-title">
-        <p>LATEST NEWS</p>
-        <h2>Tournament Updates</h2>
+        <p>Contacts</p>
       </div>
 
-      <div class="news-grid">
+      <div class="contact-wrapper">
 
-        <article class="news-card">
-          <span>NEWS</span>
+        <div class="contact-card">
 
-          <h3>Official Match Schedule Released</h3>
+          <h3>WC26 Info</h3>
 
-          <p>
-            FIFA officially announced the full schedule for the 2026 World Cup.
-          </p>
-        </article>
+          <p>Email: info@wc26.com</p>
+          <p>Phone: +1 800 2026</p>
+          <p>Location: North America</p>
 
-        <article class="news-card">
-          <span>STADIUMS</span>
+        </div>
 
-          <h3>New Stadium Designs Revealed</h3>
+        <div class="contact-card">
 
-          <p>
-            Host cities presented modern stadium upgrades for the tournament.
-          </p>
-        </article>
+          <form class="contact-form">
 
-        <article class="news-card">
-          <span>FANS</span>
+            <input type="text" placeholder="Your Name">
 
-          <h3>Record Breaking Attendance Expected</h3>
+            <input type="email" placeholder="Your Email">
 
-          <p>
-            Millions of supporters are expected to travel across North America.
-          </p>
-        </article>
+            <textarea placeholder="Your Message"></textarea>
+
+            <button class="btn hero-btn">
+              Send Message
+            </button>
+
+          </form>
+
+        </div>
 
       </div>
 
@@ -172,5 +277,10 @@
 
   </main>
 
+  <footer>
+    © 2026 FIFA World Cup Concept Website
+  </footer>
+
 </body>
+
 </html>
